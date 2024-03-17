@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content">
+        <meta name="description" content="A game of ponies building a town">
+        <base href="/">
+        <title>Pony Town</title>
+        <style>
+            body,html {
+                background: #333;
+                color: #eee;
+                font-family: var(--bs-font-sans-serif);
+                font-size: 14px;
+                margin: 0;
+                padding: 0
+            }
+
+            .playing {
+                overscroll-behavior: contain
+            }
+
+            #loading {
+                align-items: center;
+                color: #9c9c9c;
+                display: flex;
+                flex-direction: column;
+                font-size: 34px;
+                height: 100%;
+                justify-content: center;
+                line-height: 34px;
+                line-height: inherit;
+                position: fixed;
+                width: 100%
+            }
+
+            #loading>img {
+                height: 86px;
+                image-rendering: crisp-edges;
+                image-rendering: -moz-crisp-edges;
+                image-rendering: pixelated;
+                margin-bottom: 30px;
+                opacity: .6;
+                width: 74px
+            }
+
+            #loading>#loading-label:after {
+                content: " ";
+                display: inline-block;
+                width: 30px
+            }
+
+            @keyframes loading {
+                0%,99% {
+                    height: 0
+                }
+
+                to {
+                    height: 35px
+                }
+            }
+
+            .loading-error {
+                animation: loading 30s;
+                color: #d9534f;
+                font-size: 16px;
+                margin-top: 20px;
+                overflow: hidden
+            }
+
+            .loading-error-btn {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background: none;
+                border: 1px solid #d9534f;
+                border-radius: .25rem;
+                color: #d9534f;
+                display: inline-block;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                margin: 0;
+                padding: .375rem .75rem;
+                text-align: center;
+                text-decoration: none;
+                vertical-align: middle
+            }
+
+            .loading-error-btn:hover {
+                background: #d9534f;
+                color: #fff;
+                text-decoration: none
+            }
+
+            .top-menu-button {
+                margin-left: 5px;
+                z-index: 2
+            }
+        </style>
+        <link rel="stylesheet" href="/assets/styles/style-a988084f06.css">
+        <meta property="og:title" content="Pony Town">
+        <meta property="og:site_name" content="Pony Town">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://pony.town">
+        <meta property="og:description" content="A game of ponies building a town">
+        <meta property="og:image" content="https://pony.town/assets/images/logo-stacked-6bddd18e27.png">
+        <meta property="fb:app_id" content="906820496112306">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@ponytownteam">
+        <meta name="twitter:title" content="Pony Town">
+        <meta name="twitter:description" content="A game of ponies building a town">
+        <meta name="twitter:image" content="https://pony.town/assets/images/logo-stacked-6bddd18e27.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="manifest" href="/manifest.json?v2">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#d1a73c">
+        <meta name="theme-color" content="#e6c966">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+    </head>
+    <body data-key="kmncxb908z" data-base="/" data-version="0.110.6-alpha" data-patreon-link="https://patreon.com/ponytownteam" data-boosty-link="https://boosty.to/ponytown/about" data-twitter-link="https://twitter.com/ponytownteam" data-game-title="Pony Town" data-email="ponytownhelp@gmail.com" data-google-play-link="https://play.google.com/store/apps/details?id=town.pony.game" data-host="https://pony.town/" data-enable-service-worker="true">
+        <pony-town-app>
+            <div id="loading">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAArBAMAAAANulxAAAAAG1BMVEUAAABqamobGxs8PDyMjIwlJSUTExMUFBT39/f+3/pNAAAAAXRSTlMAQObYZgAAAOVJREFUKM+N0jHKwkAQBeBlb7B/LpD/KbHWEawNW3iBNb2Q2KfQWrDw2O5OlhldI/ggzcd7QyAxHACmTHMdUJcWwjAWaPsQuvGzGI4zxevnxWNXmh0uspWsztKTV27OHQBhpKz6EYoW3ns0/WnpfYvJIjlHu4H2zrk/LtpltIi0dinItXtscLjIdnj4iGo8vfspySokcypqOWpIp24vtqnZNPNGv1r7k1XJ7P+7bWFKo29mUJ6bNRnrtLCK7X1MacpGQmJ2QdNnI+Jpthw1AyGealFrWmTiWi6CfMuP0SCn+CtrI/QEzHlOQU7fnzkAAAAASUVORK5CYII=" alt="">
+                <div id="loading-label">Loading</div>
+                <p class="loading-error" id="loading-error" style="padding-left: 5px; padding-right: 5px;">
+                    Loading takes longer than expected, you can wait or try to <a class="loading-error-btn" href="/reset.html">Reload</a>
+                </p>
+            </div>
+        </pony-town-app>
+        <script id="oauth-providers" type="application/json">
+            [
+                {
+                    "id": "google",
+                    "name": "Google",
+                    "connectOnly": true
+                },
+                {
+                    "id": "twitter",
+                    "name": "Twitter"
+                },
+                {
+                    "id": "facebook",
+                    "name": "Facebook",
+                    "disabled": true
+                },
+                {
+                    "id": "github",
+                    "name": "GitHub",
+                    "connectOnly": true
+                },
+                {
+                    "id": "vkontakte",
+                    "name": "VKontakte"
+                },
+                {
+                    "id": "patreon",
+                    "name": "Patreon",
+                    "connectOnly": true
+                },
+                {
+                    "id": "discord",
+                    "name": "Discord"
+                },
+                {
+                    "id": "twitch",
+                    "name": "Twitch",
+                    "connectOnly": true
+                },
+                {
+                    "id": "tiktok",
+                    "name": "TikTok",
+                    "connectOnly": true
+                }
+            ]</script>
+        <script id="socket-options" type="text/plain">
+            iUJpZERnYW1lRGhvc3QARHBhdGhDL3dzSGZvcmNlU1NMAkVkZWJ1ZwNEaGFzaEoxMTgxODM4NTUxRmNsaWVudGFiRnVwZGF0ZYJGYmluYXJ5Q3Jhd11zaW5nbGVNZXRob2RPcHRpbWl6YXRpb25Bd2FyZQJGc2VydmVyZmJGYWN0aW9ugevsYlBhY3Rpb25XaXRoUmV0dXJugk5yZXR1cm5Ub0NsaWVudALr7GJEbW92ZYHrY6WlpWJQcHJpdmlsZWdlZEFjdGlvboHr7GJacHJpdmlsZWdlZEFjdGlvbldpdGhSZXR1cm6C8QLr7GJMZWRpdG9yQWN0aW9ugvEC62KrqU10b2tlbkxpZmVUaW1lI2Dq
+        </script>
+        <script>
+            var updatingIndexCache = !1
+              , androidInterface = "undefined" == typeof Android ? void 0 : Android;
+            function isApp() {
+                return !!window.api_googleAuthPriority || !(!androidInterface || !androidInterface.apiVersion)
+            }
+            function gtag() {
+                dataLayer.push(arguments)
+            }
+            window.onerror = async function(e) {
+                var t, a;
+                if (t = document.getElementById("loading-error")) {
+                    if (!window.localStorage.getItem("indexClearedOnce") && !updatingIndexCache) {
+                        updatingIndexCache = !0,
+                        await new Promise((e=>{
+                            setTimeout(e, 2e3)
+                        }
+                        ));
+                        try {
+                            const e = (await caches.keys()).find((e=>e.includes("workbox-precache")));
+                            if (e) {
+                                var o = await caches.open(e);
+                                if (o) {
+                                    var n = (await o.keys()).find((e=>e.url.startsWith(location.origin + "/?__WB_REVISION__")));
+                                    if (n) {
+                                        await o.delete(n);
+                                        var r = await fetch(location.origin);
+                                        await o.put(new Request(n.url), r)
+                                    }
+                                }
+                            }
+                        } catch (e) {}
+                        return window.localStorage.removeItem("bootstrap"),
+                        window.localStorage.setItem("indexClearedOnce", "1"),
+                        location.reload()
+                    }
+                    try {
+                        new Function([],["let f = () => {};", "for (const el of [1, 2, 3]) { class Temp {} };", '"".padStart(5);'].join("")),
+                        isApp() ? t.innerHTML = "Failed to load the game. Try updating your Chrome and Android System WebView apps and clearing their cache." : t.innerHTML = 'Failed to load the game, try <a class="loading-error-btn" href="/reset.html">reloading</a> the page or updating your browser.';
+                        try {
+                            navigator.serviceWorker.getRegistrations().then((function(e) {
+                                for (var t = 0; t < e.length; t++)
+                                    e[t].unregister()
+                            }
+                            ))
+                        } catch (e) {}
+                        try {
+                            caches.keys().then((function(e) {
+                                for (var t = 0; t < e.length; t++)
+                                    "music-cache" !== e[t] && caches.delete(e[t])
+                            }
+                            ))
+                        } catch (e) {}
+                        try {
+                            localStorage.removeItem("bootstrap")
+                        } catch (e) {}
+                    } catch (e) {
+                        isApp() ? t.innerHTML = "Your WebView version is no longer supported. Please update your Chrome and Android System WebView apps to play." : t.innerHTML = "Your browser is no longer supported, install a newer browser to play."
+                    }
+                    t.style.height = "auto",
+                    t.style.animation = "none",
+                    (a = document.getElementById("loading-label")) && (a.style.display = "none")
+                }
+            }
+            ,
+            window.dataLayer = window.dataLayer || [],
+            gtag("consent", "default", {
+                ad_storage: "denied",
+                analytics_storage: "denied"
+            }),
+            function() {
+                var e = document.createElement("script")
+                  , t = null;
+                try {
+                    t = localStorage.getItem("bootstrap"),
+                    e.onerror = t ? function() {
+                        localStorage.removeItem("bootstrap"),
+                        location.reload()
+                    }
+                    : window.onerror
+                } finally {
+                    e.src = t || "/assets/scripts/bootstrap-184e844b83.js",
+                    e.async = !0,
+                    document.body.appendChild(e)
+                }
+            }();
+        </script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-49127369-4" async></script>
+    </body>
+</html>
