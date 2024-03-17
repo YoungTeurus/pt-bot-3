@@ -1,0 +1,3 @@
+# Префикс для команд
+COMMAND_PREFIX = '!'
+COMMAND_PREFIX_LENGTH = len(COMMAND_PREFIX)

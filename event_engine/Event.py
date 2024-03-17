@@ -16,5 +16,8 @@ class Event(ABC):
         self.args = args
 
     @abstractmethod
-    def _getArgsDescription(self) -> list[str]:
+    def _getArgsDescription(self) -> dict[str, object]:
         raise NotImplemented
+
+    def __str__(self):
+        return f"{Event.__name__}{{priority={self.priority},type={self.type},args={self.args}}}"

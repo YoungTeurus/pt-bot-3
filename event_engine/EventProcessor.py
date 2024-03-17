@@ -2,6 +2,7 @@ from queue import PriorityQueue, Empty
 from threading import Thread
 from typing import Callable
 
+from console_io.ConsoleOutputter import ConsoleOutputter
 from event_engine.Event import Event
 from event_engine.EventConsumer import EventConsumer
 
@@ -11,14 +12,16 @@ class EventProcessor:
     __eventConsumers: list[EventConsumer]
     __thread: Thread
     __running: bool
+    __debugAllEvents: bool
 
-    def __init__(self):
+    def __init__(self, debugAllEvents: bool = False):
         self.__eventQueue = PriorityQueue()
         self.__eventConsumers = []
         self.__running = False
         self.__thread = Thread(target=self.__mainCycle, name="EventProcessor thread")
+        self.__debugAllEvents = debugAllEvents
 
-    def run(self) -> None:
+    def start(self) -> None:
         self.__running = True
         self.__thread.start()
 
@@ -37,6 +40,8 @@ class EventProcessor:
         while self.__running:
             try:
                 event = self.__eventQueue.get(timeout=0.2)
+                if self.__debugAllEvents:
+                    ConsoleOutputter.toConsole(f"Processing {event}")
                 for consumer in self.__eventConsumers:
                     if event is None:
                         continue

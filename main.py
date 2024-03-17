@@ -1,22 +1,34 @@
-from asyncio import get_event_loop
-
-from console_io.consumers.PrintToConsoleConsumer import PrintToConsoleConsumer
-from console_io.producers.AsyncConsoleInput import AsyncConsoleInput
+from comands.CommandDictionary import CommandDictionary
+from comands.CommandTypes import CommandSource
+from comands.console.ConsoleCommandProcessor import ConsoleCommandProcessor
+from console_io.ConsoleOutputter import ConsoleOutputter
+from console_io.producers.ConsoleInputer import AsyncConsoleInput
 from event_engine.EventProcessor import EventProcessor
 
-loop = get_event_loop()
-
 if __name__ == '__main__':
-    proc = EventProcessor()
+    proc = EventProcessor(debugAllEvents=True)
+    proc.start()
 
-    proc.addConsumer(PrintToConsoleConsumer())
+    # Работа с консолью
     aci = AsyncConsoleInput(proc)
+    aci.start()
+
+    # Работа с командами
+    comDict = CommandDictionary()
+    botRunning = [True]
+    proc.addConsumer(ConsoleCommandProcessor(comDict))
+
+
+    def stopEverything() -> None:
+        botRunning[0] = False
+
+
+    comDict.bind(CommandSource.CONSOLE, "stop", (lambda args: stopEverything()))
 
     try:
-        proc.run()
-
-        aci.start(loop)
-    except KeyboardInterrupt:
-        print("Finishing!")
+        while botRunning[0]:
+            pass
+    finally:
+        ConsoleOutputter.toConsole("Finilizing!")
         aci.stop()
         proc.stop()
