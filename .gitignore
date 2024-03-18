@@ -1,2 +1,2 @@
 sensitive_settings.py
-browser/driver/chromedriver.exe
+modules/browser/driver/chromedriver.exe

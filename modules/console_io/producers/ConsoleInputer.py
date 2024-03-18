@@ -1,6 +1,6 @@
 from threading import Thread
 
-from console_io.events.ConsoleInputEvent import ConsoleInputEvent
+from modules.console_io.events.ConsoleInputEvent import ConsoleInputEvent
 from event_engine.EventProcessor import EventProcessor
 
 

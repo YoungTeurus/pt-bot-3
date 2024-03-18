@@ -1,8 +1,8 @@
-from comands.CommandConfig import COMMAND_PREFIX, COMMAND_PREFIX_LENGTH
-from comands.CommandDictionary import CommandDictionary
-from comands.CommandTypes import CommandSource
-from console_io.ConsoleOutputter import ConsoleOutputter
-from console_io.events.ConsoleInputEvent import ConsoleInputEvent
+from modules.comands.CommandConfig import COMMAND_PREFIX, COMMAND_PREFIX_LENGTH
+from modules.comands.CommandDictionary import CommandDictionary
+from modules.comands.CommandTypes import CommandSource
+from modules.console_io.ConsoleOutputter import ConsoleOutputter
+from modules.console_io.events.ConsoleInputEvent import ConsoleInputEvent
 from event_engine.Event import Event
 from event_engine.EventConsumer import EventConsumer
 from shlex import split
@@ -23,7 +23,7 @@ class ConsoleCommandProcessor(EventConsumer):
             command = commandAndArgs[0]
             maybeAction = self.__comDict.findAction(CommandSource.CONSOLE, command)
             if maybeAction is None:
-                ConsoleOutputter.toConsole(f"Console command {command} was not found")
+                ConsoleOutputter.toConsole(f"Console command '{command}' was not found")
             else:
                 maybeAction(commandAndArgs[1:])
 

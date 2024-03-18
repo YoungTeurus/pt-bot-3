@@ -1,23 +1,27 @@
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field
 
 DEFAULT_PRIORITY = 5
+EVENT_TYPE = str
 
 
-@dataclass(order=True)
 class Event(ABC):
     priority: int
-    type: str = field(compare=False)
-    args: list[object] = field(compare=False)
+    type: EVENT_TYPE
+    args: list[object]
 
-    def __init__(self, type: str, args: list[object], priority: int = DEFAULT_PRIORITY):
+    def __init__(self, args: list[object], priority: int = DEFAULT_PRIORITY, type: EVENT_TYPE | None = None):
         self.priority = priority
-        self.type = type
+        self.type = type if type is not None else self.__class__.__name__
         self.args = args
 
     @abstractmethod
-    def _getArgsDescription(self) -> dict[str, object]:
+    def _getArgsDescription(self) -> list[tuple[str, type]]:
         raise NotImplemented
 
     def __str__(self):
         return f"{Event.__name__}{{priority={self.priority},type={self.type},args={self.args}}}"
+
+    def __lt__(self, other):
+        if not isinstance(other, Event):
+            raise TypeError
+        return self.priority < other.priority

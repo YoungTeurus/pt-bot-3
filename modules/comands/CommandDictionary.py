@@ -1,4 +1,4 @@
-from comands.CommandTypes import ACTION, UNBIND_ACTION, CommandSource
+from modules.comands.CommandTypes import ACTION, UNBIND_ACTION, CommandSource
 
 
 class CommandDictionary:
