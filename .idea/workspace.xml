@@ -4,24 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9f82bf3-e7c8-4533-8cc3-9d06e1002fb2" name="Changes" comment="Простой асинхронный ввод-вывод">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat/ChatMessage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat/events/ChatMessageEvent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comands/CommandConfig.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comands/CommandDictionary.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comands/CommandTypes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comands/console/ConsoleCommandProcessor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/console_io/ConsoleOutputter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/console_io/events/ConsoleInputEvent.py" afterDir="false" />
+    <list default="true" id="f9f82bf3-e7c8-4533-8cc3-9d06e1002fb2" name="Changes" comment="Tests">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/browser/driver/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/browser/driver/place chromedriver.exe here" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/PostgresDB.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/warriors/ReadMe.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sensitive_settings_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pt-bot-3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pt-bot-3.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console_io/consumers/PrintToConsoleConsumer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/console_io/events/SimpleMessageEvent.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/console_io/producers/AsyncConsoleInput.py" beforeDir="false" afterPath="$PROJECT_DIR$/console_io/producers/ConsoleInputer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_engine/Event.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_engine/Event.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_engine/EventConsumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_engine/EventConsumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_engine/EventProcessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_engine/EventProcessor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2.html" beforeDir="false" />
+    </list>
+    <list id="aa7086b0-6c5b-4db6-a567-8cbd404fb103" name="Секретные настройки" comment="">
+      <change afterPath="$PROJECT_DIR$/sensitive_settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +34,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -49,20 +48,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "proofread"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/dev/pt-bot-3&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;proofread&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\dev\pt-bot-3" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\dev\pt-bot-3\browser\driver" />
       <recent name="D:\dev\pt-bot-3\event_engine" />
     </key>
   </component>
@@ -80,6 +86,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -101,10 +108,12 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f9f82bf3-e7c8-4533-8cc3-9d06e1002fb2" name="Changes" comment="" />
+      <changelist id="aa7086b0-6c5b-4db6-a567-8cbd404fb103" name="Секретные настройки" comment="" />
       <created>1710669863665</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710669863665</updated>
+      <workItem from="1710699396548" duration="41000" />
     </task>
     <task id="LOCAL-00001" summary="Простой асинхронный ввод-вывод">
       <option name="closed" value="true" />
@@ -114,12 +123,41 @@
       <option name="project" value="LOCAL" />
       <updated>1710690460946</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Работающие команды">
+      <option name="closed" value="true" />
+      <created>1710697016408</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710697016408</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Работающие команды">
+      <option name="closed" value="true" />
+      <created>1710702470842</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710702470842</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Tests">
+      <option name="closed" value="true" />
+      <created>1710703397475</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710703397475</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Простой асинхронный ввод-вывод" />
-    <option name="LAST_COMMIT_MESSAGE" value="Простой асинхронный ввод-вывод" />
+    <MESSAGE value="Работающие команды" />
+    <MESSAGE value="Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
