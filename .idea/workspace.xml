@@ -4,37 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9f82bf3-e7c8-4533-8cc3-9d06e1002fb2" name="Changes" comment="Pre-browser">
-      <change afterPath="$PROJECT_DIR$/modules/ModuleDefinition.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/browser/Browser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/browser/BrowserController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/browser/browserTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/browser/events/BrowserLoadedEvent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/browser/rountines/Routine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/browser/rountines/RoutineEndEvent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/browser/rountines/RoutineStartEvent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/browser/rountines/simple/OpenSite.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/comands/Commands.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/console_io/ConsoleIO.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/pt/PT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/pt/routines/LoadInPT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="f9f82bf3-e7c8-4533-8cc3-9d06e1002fb2" name="Changes" comment="Браузер!">
+      <change afterPath="$PROJECT_DIR$/modules/browser/rountines/simple/AlertWaiter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/browser/rountines/simple/RunJavascript.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/driver/place chromedriver.exe here" beforeDir="false" afterPath="$PROJECT_DIR$/event_engine/helpers/EventWatchers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/ChatMessage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/events/ChatMessageEvent.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comands/CommandConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/comands/CommandConfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comands/CommandDictionary.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/comands/CommandDictionary.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comands/CommandTypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/comands/CommandTypes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comands/console/ConsoleCommandProcessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/comands/console/ConsoleCommandProcessor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console_io/ConsoleOutputter.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/console_io/ConsoleOutputter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console_io/events/ConsoleInputEvent.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/console_io/events/ConsoleInputEvent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console_io/producers/ConsoleInputer.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/console_io/producers/ConsoleInputer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/PostgresDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/database/PostgresDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event_engine/Event.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_engine/Event.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event_engine/EventConsumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_engine/EventConsumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_engine/EventProcessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_engine/EventProcessor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_engine/helpers/EventWatchers.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_engine/helpers/EventWatchers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/browser/events/BrowserLoadedEvent.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/browser/events/BrowserLoadedEvent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/browser/rountines/Routine.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/browser/rountines/Routine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/browser/rountines/RoutineEndEvent.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/browser/rountines/RoutineEndEvent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/browser/rountines/RoutineStartEvent.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/browser/rountines/RoutineStartEvent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/browser/rountines/simple/OpenSite.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/browser/rountines/simple/OpenSite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/console_io/events/ConsoleInputEvent.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/console_io/events/ConsoleInputEvent.py" afterDir="false" />
     </list>
     <list id="aa7086b0-6c5b-4db6-a567-8cbd404fb103" name="Секретные настройки" comment="">
       <change afterPath="$PROJECT_DIR$/sensitive_settings.py" afterDir="false" />
@@ -71,6 +54,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python.AlertWaiter.executor": "Run",
+    "Python.EventWatchers.executor": "Run",
     "Python.driverTest.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -97,6 +82,50 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="AlertWaiter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pt-bot-3" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/modules/browser/rountines/simple" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/modules/browser/rountines/simple/AlertWaiter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="EventWatchers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pt-bot-3" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/event_engine/helpers" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/event_engine/helpers/EventWatchers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="driverTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pt-bot-3" />
       <option name="ENV_FILES" value="" />
@@ -144,6 +173,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.AlertWaiter" />
+        <item itemvalue="Python.EventWatchers" />
         <item itemvalue="Python.driverTest" />
       </list>
     </recent_temporary>
@@ -206,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710776920221</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Браузер!">
+      <option name="closed" value="true" />
+      <created>1710784345154</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710784345154</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +256,8 @@
     <MESSAGE value="Работающие команды" />
     <MESSAGE value="Tests" />
     <MESSAGE value="Pre-browser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pre-browser" />
+    <MESSAGE value="Браузер!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Браузер!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

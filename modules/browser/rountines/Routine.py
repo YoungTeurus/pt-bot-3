@@ -3,6 +3,7 @@ from threading import Thread
 
 from selenium.webdriver.chromium.webdriver import ChromiumDriver
 
+from event_engine.Event import EVENT_ARGS_DESCRIPTION
 from event_engine.EventProcessor import EventProcessor
 from modules.browser.rountines.RoutineEndEvent import RoutineEndEvent
 from modules.browser.rountines.RoutineStartEvent import RoutineStartEvent
@@ -14,7 +15,7 @@ class Routine(ABC):
         self.__name = self.__class__.__name__ if name is None else name
 
     @abstractmethod
-    def _getStartArgsDescription(self) -> list[tuple[str, type]]:
+    def _getStartArgsDescription(self) -> EVENT_ARGS_DESCRIPTION:
         raise NotImplemented
 
     def start(self, driver: ChromiumDriver, args: list) -> None:

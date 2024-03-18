@@ -10,7 +10,7 @@ class EventConsumer(ABC):
         self.__consumableEventTypes = set(consumableEventTypes)
 
     def consume(self, event: Event) -> tuple[bool, Event | None]:
-        if event.type not in self.__consumableEventTypes:
+        if event.eType not in self.__consumableEventTypes:
             return False, event
 
         return True, self._doConsume(event)
@@ -19,5 +19,8 @@ class EventConsumer(ABC):
     def _doConsume(self, event: Event) -> Event | None:
         raise NotImplemented()
 
+    def _name(self) -> str:
+        return f"{self.__class__.__name__}"
+
     def __str__(self) -> str:
-        return f"{self.__class__.__name__}:{self.__consumableEventTypes}"
+        return f"{self._name()}:{self.__consumableEventTypes}"
